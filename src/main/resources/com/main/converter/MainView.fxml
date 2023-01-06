@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="background" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="330.0" prefWidth="560.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.main.converter.MainController">
+   <children>
+      <Label layoutX="30.0" layoutY="14.0" text="Converter" textFill="#7895b2">
+         <font>
+            <Font name="PT Mono Bold" size="40.0" />
+         </font>
+      </Label>
+      <ComboBox fx:id="originalNumberSystem" layoutX="98.0" layoutY="99.0" prefWidth="150.0" />
+      <FontAwesomeIcon glyphName="PLAY" layoutX="273.0" layoutY="116.0" text="" />
+      <TextField fx:id="input" layoutX="98.0" layoutY="138.0" onAction="#convertNumber" prefHeight="26.0" prefWidth="361.0" />
+      <Label fx:id="result" alignment="CENTER" contentDisplay="CENTER" layoutX="63.0" layoutY="231.0" prefHeight="44.0" prefWidth="440.0" textAlignment="CENTER" textFill="#7895b2">
+         <font>
+            <Font name="PT Mono Bold" size="24.0" />
+         </font></Label>
+      <Button fx:id="button" layoutX="98.0" layoutY="173.0" mnemonicParsing="false" onAction="#convertNumber" prefHeight="26.0" prefWidth="361.0" text="Convert" />
+      <ComboBox fx:id="otherNumberSystem" layoutX="302.0" layoutY="99.0" prefWidth="150.0" />
+   </children>
+</AnchorPane>
