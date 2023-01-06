@@ -48,6 +48,8 @@ public class MainController implements Initializable {
         try {
             int number = Integer.parseInt(input.getText());
             result.setText(Integer.toString(number));
+            String original = originalNumberSystem.getValue();
+            String second = otherNumberSystem.getValue();
         } catch (Exception e){
             result.setText("That's not a valid number");
         }
