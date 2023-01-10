@@ -47,9 +47,38 @@ public class MainController implements Initializable {
     public void convertNumber(){
         try {
             int number = Integer.parseInt(input.getText());
-            result.setText(Integer.toString(number));
+            int numberToDecimal = 0;
             String original = originalNumberSystem.getValue();
             String second = otherNumberSystem.getValue();
+            switch (original){
+                case "Dual": {
+                    numberToDecimal = Integer.parseInt(String.valueOf(number), 2); break;
+                }
+                case "Hexadecimal": {
+                    numberToDecimal = Integer.parseInt(String.valueOf(number), 16); break;
+                }
+                case "Octal": {
+                    numberToDecimal = Integer.parseInt(String.valueOf(number), 8); break;
+                }
+                default: {
+                    numberToDecimal = number; break;
+                }
+            }
+
+            switch (second){
+                case "Dual": {
+                    result.setText(Integer.toBinaryString(numberToDecimal)); break;
+                }
+                case "Hexadecimal": {
+                    result.setText(Integer.toHexString(numberToDecimal)); break;
+                }
+                case "Octal": {
+                    result.setText(Integer.toOctalString(numberToDecimal)); break;
+                }
+                default: {
+                    result.setText(String.valueOf(numberToDecimal)); break;
+                }
+            }
         } catch (Exception e){
             result.setText("That's not a valid number");
         }
