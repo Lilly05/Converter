@@ -83,4 +83,79 @@ public class MainController implements Initializable {
             result.setText("That's not a valid number");
         }
     }
+
+    @FXML
+    public void convertNumberCalculation(){
+        try {
+            String convertedNumber = "";
+            String original = originalNumberSystem.getValue();
+            String second = otherNumberSystem.getValue();
+            switch (original){
+                case "Dual": {
+                    int number = Integer.parseInt(input.getText());
+                    int savedNumber = 0;
+                    StringBuilder stringBuilder = new StringBuilder();
+                    stringBuilder.append(number);
+                    String reversedNumber = String.valueOf(stringBuilder.reverse());
+                    for (int i = 0; i < reversedNumber.length(); i++){
+                        char c = reversedNumber.charAt(i);
+                        int eachNumber = Character.getNumericValue(c);
+                        savedNumber += eachNumber * Math.pow(2, i);
+                    }
+                    convertedNumber = String.valueOf(savedNumber);
+                    break;
+                }
+                case "Hexadecimal": {
+                    String hexNumber = input.getText();
+                    int savedNumber = 0;
+                    StringBuilder stringBuilder = new StringBuilder();
+                    stringBuilder.append(hexNumber);
+                    String reversedNumber = String.valueOf(stringBuilder.reverse());
+                    for (int i = 0; i < reversedNumber.length(); i++){
+                        char c = reversedNumber.charAt(i);
+                        int eachNumber = Character.getNumericValue(c);
+                        savedNumber += eachNumber * Math.pow(16, i);
+                    }
+                    convertedNumber = String.valueOf(savedNumber);
+                    break;
+                }
+                case "Octal": {
+
+                }
+                default: {
+
+                }
+            }
+
+            switch (second){
+                case "Dual": {
+                    int reminder = Integer.parseInt(convertedNumber);
+                    convertedNumber = "";
+                    while(reminder != 0){
+                        if (reminder % 2 == 0){
+                            convertedNumber += "0";
+                        }else{
+                            convertedNumber += "1";
+                        }
+                        reminder = reminder / 2;
+                    }
+                    StringBuilder stringBuilder = new StringBuilder();
+                    stringBuilder.append(convertedNumber);
+                    result.setText(String.valueOf(stringBuilder.reverse()));
+                    break;
+                }
+                case "Hexadecimal": {
+
+                }
+                case "Octal": {
+
+                }
+                default: {
+
+                }
+            }
+        } catch (Exception e){
+            result.setText("That's not a valid number");
+        }
+    }
 }

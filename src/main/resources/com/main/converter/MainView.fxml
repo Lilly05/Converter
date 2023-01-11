@@ -17,12 +17,12 @@
       </Label>
       <ComboBox fx:id="originalNumberSystem" layoutX="98.0" layoutY="99.0" prefWidth="150.0" />
       <FontAwesomeIcon glyphName="PLAY" layoutX="273.0" layoutY="116.0" text="" />
-      <TextField fx:id="input" layoutX="98.0" layoutY="138.0" onAction="#convertNumber" prefHeight="26.0" prefWidth="361.0" />
+      <TextField fx:id="input" layoutX="98.0" layoutY="138.0" prefHeight="26.0" prefWidth="361.0" />
       <Label fx:id="result" alignment="CENTER" contentDisplay="CENTER" layoutX="63.0" layoutY="231.0" prefHeight="44.0" prefWidth="440.0" textAlignment="CENTER" textFill="#7895b2">
          <font>
             <Font name="PT Mono Bold" size="24.0" />
          </font></Label>
-      <Button fx:id="button" layoutX="98.0" layoutY="173.0" mnemonicParsing="false" onAction="#convertNumber" prefHeight="26.0" prefWidth="361.0" text="Convert" />
+      <Button fx:id="button" layoutX="98.0" layoutY="173.0" mnemonicParsing="false" onAction="#convertNumberCalculation" prefHeight="26.0" prefWidth="361.0" text="Convert" />
       <ComboBox fx:id="otherNumberSystem" layoutX="302.0" layoutY="99.0" prefWidth="150.0" />
    </children>
 </AnchorPane>
